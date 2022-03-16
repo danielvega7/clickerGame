@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */; };
 		11CE53EF27E0D563007AC389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53EE27E0D563007AC389 /* AppDelegate.swift */; };
 		11CE53F127E0D563007AC389 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53F027E0D563007AC389 /* SceneDelegate.swift */; };
 		11CE53F327E0D563007AC389 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53F227E0D563007AC389 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHighScores.swift; sourceTree = "<group>"; };
 		11CE53EB27E0D563007AC389 /* clickerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clickerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CE53EE27E0D563007AC389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11CE53F027E0D563007AC389 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				11CE53EE27E0D563007AC389 /* AppDelegate.swift */,
 				11CE53F027E0D563007AC389 /* SceneDelegate.swift */,
 				11CE53F227E0D563007AC389 /* ViewController.swift */,
+				1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */,
 				11CE53F427E0D563007AC389 /* Main.storyboard */,
 				11CE53FA27E0D564007AC389 /* Assets.xcassets */,
 				11CE53FC27E0D564007AC389 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11CE53F327E0D563007AC389 /* ViewController.swift in Sources */,
+				1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */,
 				11CE53EF27E0D563007AC389 /* AppDelegate.swift in Sources */,
 				11CE53F127E0D563007AC389 /* SceneDelegate.swift in Sources */,
 				11CE53F927E0D563007AC389 /* clickerGame.xcdatamodeld in Sources */,
