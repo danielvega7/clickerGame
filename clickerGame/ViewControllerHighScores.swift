@@ -31,7 +31,7 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
         // idk y pushing not working
         return cell
         
-        //hopefully fixed the issue
+       
     }
     
 
