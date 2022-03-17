@@ -30,6 +30,8 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
         cell.detailTextLabel?.text = String(StaticStuff.highScores[indexPath.row])
         // idk y pushing not working
         return cell
+        
+        //hopefully fixed the issue
     }
     
 
