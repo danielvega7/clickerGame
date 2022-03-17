@@ -21,12 +21,13 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return StaticStuff.highScores.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel?.text = "User"
+        cell.detailTextLabel?.text = String(StaticStuff.highScores[indexPath.row])
         
         return cell
     }
