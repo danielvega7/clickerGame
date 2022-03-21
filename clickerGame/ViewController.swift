@@ -33,38 +33,47 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // start the timer here so you can get how many seconds before you started or called your method.
+        
+        read()
+//        write()
         timer = Timer()
         
+//        db.collection("names").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
     }
 
     @objc func calculateSeconds() {
          second += 1
+        timerEvent()
         timeLabelOutlet.text = String(second)
+        write()
     }
     
     func stopTimerTest() {
       timer?.invalidate()
       timer = nil
+      second = 0
     }
     
-    func whatever() {
-//        second = 0
-         if second > 30 {
+    func timerEvent() {
+        
+         if second > 5 {
              print(second)
              
              if StaticStuff.highScores.count < 9 {
                  StaticStuff.highScores.append(current)
                  StaticStuff.highScores.sort()
+                 write()
              }
              else {
                  var i = 0
                  while(i < StaticStuff.highScores.count) {
-                     
+                     print("is loop happening")
                          if current > StaticStuff.highScores[i] {
                              StaticStuff.highScores.remove(at: i)
                              StaticStuff.highScores.append(current)
                              StaticStuff.highScores.sort()
+                             
+                             write()
                          }
                          else{
                              
@@ -74,21 +83,25 @@ class ViewController: UIViewController {
                  }
              }
              
-             
+             current = 0
              
              stopTimerTest()
+             print("timer stopped ig")
+             
+            
          } else {
              print(second)
+             //stopTimerTest()
          }
 
-         second = 0
-         //timer.invalidate()
-         timer = nil
+        
+         
     }
     
     @IBAction func startButtonAction(_ sender: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.calculateSeconds), userInfo: nil, repeats: true)
-        whatever()
+        current = 0
+        timerEvent()
     }
     
     @IBAction func clickMeButtonAction(_ sender: UIButton) {
@@ -96,10 +109,31 @@ class ViewController: UIViewController {
     }
     
     func read() {
+        let docRef = db.collection("clicker").document("highscores")
         
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data()!
+                
+//                if StaticStuff.highScores.count > 0 {
+                print("getting called")
+                StaticStuff.highScores = dataDescription.first!.value as! [Int]
+                //}
+//                else {
+//                    print("reading getting called")
+//                }
+//                self.textViewOutlet.text = dataDescription.f
+                //print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
     func write() {
-        db.collection("names").document("movieArray").setData(["movie": highScore], merge: true)
+       
+        db.collection("clicker").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
+//        db.collection("clicker").document("new").setData(["new": StaticStuff.highScores], merge: true)
+//        db.collection("clicker").document("again").setData(["please": "urFat"], merge: true)
     }
     
     /*@objc func fireTimer() {

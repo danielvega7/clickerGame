@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A8699627E7FC510074774D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A8699527E7FC510074774D /* GoogleService-Info.plist */; };
+		06A8699827E803630074774D /* user class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8699727E803630074774D /* user class.swift */; };
 		1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */; };
 		11CE53EF27E0D563007AC389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53EE27E0D563007AC389 /* AppDelegate.swift */; };
 		11CE53F127E0D563007AC389 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53F027E0D563007AC389 /* SceneDelegate.swift */; };
@@ -15,7 +17,6 @@
 		11CE53F927E0D563007AC389 /* clickerGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53F727E0D563007AC389 /* clickerGame.xcdatamodeld */; };
 		11CE53FB27E0D564007AC389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CE53FA27E0D564007AC389 /* Assets.xcassets */; };
 		11CE53FE27E0D564007AC389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CE53FC27E0D564007AC389 /* LaunchScreen.storyboard */; };
-		11CE540627E0D6BB007AC389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11CE540527E0D6BB007AC389 /* GoogleService-Info.plist */; };
 		11CE540927E0D7D9007AC389 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 11CE540827E0D7D9007AC389 /* FirebaseAnalytics */; };
 		11CE540B27E0D7D9007AC389 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 11CE540A27E0D7D9007AC389 /* FirebaseAnalyticsSwift-Beta */; };
 		11CE540D27E0D7D9007AC389 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 11CE540C27E0D7D9007AC389 /* FirebaseDatabase */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06A8699527E7FC510074774D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06A8699727E803630074774D /* user class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "user class.swift"; sourceTree = "<group>"; };
 		1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHighScores.swift; sourceTree = "<group>"; };
 		11CE53EB27E0D563007AC389 /* clickerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clickerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CE53EE27E0D563007AC389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +38,6 @@
 		11CE53FA27E0D564007AC389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11CE53FD27E0D564007AC389 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11CE53FF27E0D564007AC389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11CE540527E0D6BB007AC389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +79,13 @@
 				11CE53EE27E0D563007AC389 /* AppDelegate.swift */,
 				11CE53F027E0D563007AC389 /* SceneDelegate.swift */,
 				11CE53F227E0D563007AC389 /* ViewController.swift */,
+				06A8699727E803630074774D /* user class.swift */,
 				1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */,
 				11CE53F427E0D563007AC389 /* Main.storyboard */,
 				11CE53FA27E0D564007AC389 /* Assets.xcassets */,
 				11CE53FC27E0D564007AC389 /* LaunchScreen.storyboard */,
 				11CE53FF27E0D564007AC389 /* Info.plist */,
-				11CE540527E0D6BB007AC389 /* GoogleService-Info.plist */,
+				06A8699527E7FC510074774D /* GoogleService-Info.plist */,
 				11CE53F727E0D563007AC389 /* clickerGame.xcdatamodeld */,
 			);
 			path = clickerGame;
@@ -158,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11CE53FE27E0D564007AC389 /* LaunchScreen.storyboard in Resources */,
-				11CE540627E0D6BB007AC389 /* GoogleService-Info.plist in Resources */,
+				06A8699627E7FC510074774D /* GoogleService-Info.plist in Resources */,
 				11CE53FB27E0D564007AC389 /* Assets.xcassets in Resources */,
 				11CE53F627E0D563007AC389 /* Main.storyboard in Resources */,
 			);
@@ -173,6 +176,7 @@
 			files = (
 				11CE53F327E0D563007AC389 /* ViewController.swift in Sources */,
 				1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */,
+				06A8699827E803630074774D /* user class.swift in Sources */,
 				11CE53EF27E0D563007AC389 /* AppDelegate.swift in Sources */,
 				11CE53F127E0D563007AC389 /* SceneDelegate.swift in Sources */,
 				11CE53F927E0D563007AC389 /* clickerGame.xcdatamodeld in Sources */,

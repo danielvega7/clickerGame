@@ -28,7 +28,7 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel?.text = "User"
         cell.detailTextLabel?.text = String(StaticStuff.highScores[indexPath.row])
-        // idk y pushing not working
+        
         return cell
         
        
