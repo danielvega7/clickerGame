@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.1538461538462" y="95.260663507109001"/>
+            <point key="canvasLocation" x="1083" y="-449"/>
         </scene>
         <!--Scores-->
         <scene sceneID="55I-k0-Utz">
@@ -123,6 +123,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="m0X-eA-Z0t" kind="relationship" relationship="viewControllers" id="FBf-Ce-X1R"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="yCH-v6-GvJ"/>
                         <segue destination="zdV-Zx-KAh" kind="relationship" relationship="viewControllers" id="ErM-xR-mIc"/>
                     </connections>
@@ -131,10 +132,54 @@
             </objects>
             <point key="canvasLocation" x="136.92307692307691" y="95.260663507109001"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="IXX-kp-C04">
+            <objects>
+                <viewController id="m0X-eA-Z0t" customClass="ViewControllerHomeScreen" customModule="clickerGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NlM-ms-Ab6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-26-8i8">
+                                <rect key="frame" x="99" y="216" width="192" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-k6-kzT">
+                                <rect key="frame" x="166" y="101" width="60" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="m0X-eA-Z0t" eventType="touchUpInside" id="oSY-jS-JkA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WRw-QF-evK">
+                                <rect key="frame" x="99" y="623" width="192" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Sd-zM-NT4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DqR-TV-tyA"/>
+                    <connections>
+                        <outlet property="passwordTextFieldOultet" destination="WRw-QF-evK" id="IOr-vh-DGR"/>
+                        <outlet property="usernameTextFieldOutlet" destination="zaX-26-8i8" id="ghi-qo-ORP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhe-5o-Dgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.7692307692307" y="556.6350710900474"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

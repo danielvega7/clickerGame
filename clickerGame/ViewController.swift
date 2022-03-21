@@ -8,11 +8,7 @@
 import UIKit
 import Firebase
 
-public class StaticStuff {
-    static var highScores = [Int]()
-    
-    
-}
+
 
 class ViewController: UIViewController {
 

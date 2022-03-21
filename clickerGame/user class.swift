@@ -16,3 +16,9 @@ public class User {
         username = u
     }
 }
+
+public class StaticStuff {
+    static var highScores = [Int]()
+    
+    static var currentUser = User(u: "default")
+}

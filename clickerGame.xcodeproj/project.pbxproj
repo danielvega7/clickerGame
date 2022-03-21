@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06A8699627E7FC510074774D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A8699527E7FC510074774D /* GoogleService-Info.plist */; };
 		06A8699827E803630074774D /* user class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8699727E803630074774D /* user class.swift */; };
+		06A8699A27E8BE7A0074774D /* ViewControllerHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8699927E8BE7A0074774D /* ViewControllerHomeScreen.swift */; };
 		1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */; };
 		11CE53EF27E0D563007AC389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53EE27E0D563007AC389 /* AppDelegate.swift */; };
 		11CE53F127E0D563007AC389 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE53F027E0D563007AC389 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		06A8699527E7FC510074774D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06A8699727E803630074774D /* user class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "user class.swift"; sourceTree = "<group>"; };
+		06A8699927E8BE7A0074774D /* ViewControllerHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHomeScreen.swift; sourceTree = "<group>"; };
 		1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHighScores.swift; sourceTree = "<group>"; };
 		11CE53EB27E0D563007AC389 /* clickerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clickerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CE53EE27E0D563007AC389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				11CE53F227E0D563007AC389 /* ViewController.swift */,
 				06A8699727E803630074774D /* user class.swift */,
 				1171BD1A27E22A30007EAE8E /* ViewControllerHighScores.swift */,
+				06A8699927E8BE7A0074774D /* ViewControllerHomeScreen.swift */,
 				11CE53F427E0D563007AC389 /* Main.storyboard */,
 				11CE53FA27E0D564007AC389 /* Assets.xcassets */,
 				11CE53FC27E0D564007AC389 /* LaunchScreen.storyboard */,
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A8699A27E8BE7A0074774D /* ViewControllerHomeScreen.swift in Sources */,
 				11CE53F327E0D563007AC389 /* ViewController.swift in Sources */,
 				1171BD1B27E22A30007EAE8E /* ViewControllerHighScores.swift in Sources */,
 				06A8699827E803630074774D /* user class.swift in Sources */,
