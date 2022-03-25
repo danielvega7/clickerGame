@@ -12,6 +12,7 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nameLoggedInLabelOutlet: UILabel!
     let db = Firestore.firestore()
     
     var ref = Database.database().reference()
@@ -29,12 +30,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("\(db.collection("clicker").path.count)")
         read()
 //        write()
         timer = Timer()
-        
+        nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
 //        db.collection("names").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewWillAppear(true)
+        nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
     }
 
     @objc func calculateSeconds() {
@@ -52,32 +58,32 @@ class ViewController: UIViewController {
     
     func timerEvent() {
         
-         if second > 5 {
-             print(second)
+         if second > 30 {
              
-             if StaticStuff.highScores.count < 9 {
-                 StaticStuff.highScores.append(current)
-                 StaticStuff.highScores.sort()
-                 write()
-             }
-             else {
-                 var i = 0
-                 while(i < StaticStuff.highScores.count) {
-                     print("is loop happening")
-                         if current > StaticStuff.highScores[i] {
-                             StaticStuff.highScores.remove(at: i)
-                             StaticStuff.highScores.append(current)
-                             StaticStuff.highScores.sort()
-                             
-                             write()
-                         }
-                         else{
-                             
-                         }
-                     
-                     i += 1
-                 }
-             }
+             StaticStuff.currentUser.highscores.append(current)
+//             if StaticStuff.highScores.count < 9 {
+//                 StaticStuff.highScores.append(current)
+//                 StaticStuff.highScores.sort()
+//                 write()
+//             }
+//             else {
+//                 var i = 0
+//                 while(i < StaticStuff.highScores.count) {
+//                     print("is loop happening")
+//                         if current > StaticStuff.highScores[i] {
+//                             StaticStuff.highScores.remove(at: i)
+//                             StaticStuff.highScores.append(current)
+//                             StaticStuff.highScores.sort()
+//
+//                             write()
+//                         }
+//                         else{
+//
+//                         }
+//
+//                     i += 1
+//                 }
+//             }
              
              current = 0
              
@@ -128,8 +134,7 @@ class ViewController: UIViewController {
     func write() {
        
         db.collection("clicker").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
-//        db.collection("clicker").document("new").setData(["new": StaticStuff.highScores], merge: true)
-//        db.collection("clicker").document("again").setData(["please": "urFat"], merge: true)
+
     }
     
     /*@objc func fireTimer() {

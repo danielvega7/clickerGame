@@ -41,18 +41,26 @@
                                     <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9q-mg-iHu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDv-ih-0Ai">
+                                <rect key="frame" x="120" y="218" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="gamecontroller" catalog="system" id="G0X-84-zI1"/>
                     <connections>
+                        <outlet property="nameLoggedInLabelOutlet" destination="RDv-ih-0Ai" id="FzD-Ms-lsP"/>
                         <outlet property="timeLabelOutlet" destination="Zjn-SR-hfA" id="wfj-5p-k32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="-449"/>
+            <point key="canvasLocation" x="81.538461538461533" y="617.7725118483412"/>
         </scene>
         <!--Scores-->
         <scene sceneID="55I-k0-Utz">
@@ -110,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pK6-A4-Nk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906.1538461538462" y="95.260663507109001"/>
+            <point key="canvasLocation" x="915" y="618"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GZq-hs-eyn">
@@ -130,7 +138,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMm-mk-2R9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.92307692307691" y="95.260663507109001"/>
+            <point key="canvasLocation" x="82" y="-114"/>
         </scene>
         <!--Home-->
         <scene sceneID="IXX-kp-C04">
@@ -173,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhe-5o-Dgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010.7692307692307" y="556.6350710900474"/>
+            <point key="canvasLocation" x="-742" y="619"/>
         </scene>
     </scenes>
     <resources>
