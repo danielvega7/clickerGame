@@ -39,6 +39,11 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        machoRead()
+        tableViewOutlet.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StaticStuff.allUsers.count
@@ -47,7 +52,9 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel?.text = StaticStuff.allUsers[indexPath.row].username
-        cell.detailTextLabel?.text = String(StaticStuff.allUsers[indexPath.row].highscores[indexPath.row])
+        StaticStuff.allUsers[indexPath.row].findHigh()
+        
+        cell.detailTextLabel?.text = String(StaticStuff.allUsers[indexPath.row].top)
         
         return cell
         
@@ -74,5 +81,56 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
         db.collection("clicker").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
 
     }
+    func machoRead()
+        {
+            let docRef = db.collection("clicker").document("users")
+            docRef.getDocument { (document, error) in
+
+                if let document = document, document.exists {
+                    let dataDescription = document.data()!
+                    var data = [Data]()
+
+                    if let temp = dataDescription["userArray"] as? [Data] {
+                        data = temp
+                    }
+
+
+
+                    do{
+                        StaticStuff.allUsersData = data
+                        let decoder = JSONDecoder()
+                       
+                        for each in data {
+                            print("is happening")
+                            StaticStuff.allUsers = try decoder.decode([User].self, from: each)
+                        }
+                        
+                        
+                        
+                    } catch {
+                        print("unable to encode class for loop")
+                    }
+                    do {
+                        let decoder = JSONDecoder()
+                        var c = 0
+                        while(c < data.count) {
+                            StaticStuff.currentUser = try decoder.decode(User.self, from: data[c])
+                            print("testing \(StaticStuff.currentUser.username)")
+                            StaticStuff.allUsers.append(StaticStuff.currentUser)
+                            c+=1
+                        }
+                    }
+                    catch {
+                        print("unable to encode class while loop")
+                    }
+                }
+            }
+            var what = 0
+            while(what < StaticStuff.allUsers.count){
+                print(StaticStuff.allUsers[what].username)
+                what+=1
+            }
+        }
+    
 
 }

@@ -28,6 +28,7 @@ class ViewControllerHomeScreen: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         machoRead()
         
+        
         var isName = false
         if usernameTextFieldOutlet.text != "" {
             var check = 0
@@ -42,9 +43,10 @@ class ViewControllerHomeScreen: UIViewController {
             if isName {
                 StaticStuff.currentUser = StaticStuff.allUsers[index]
                 presentController()
+                
             }
             else {
-                
+                StaticStuff.currentUser = User(u: usernameTextFieldOutlet.text!)
                 StaticStuff.allUsers.append(StaticStuff.currentUser)
                 do {
                     let encoder = JSONEncoder()
@@ -136,6 +138,7 @@ class ViewControllerHomeScreen: UIViewController {
                     var c = 0
                     while(c < data.count) {
                         StaticStuff.currentUser = try decoder.decode(User.self, from: data[c])
+                        print("testing \(StaticStuff.currentUser.username)")
                         StaticStuff.allUsers.append(StaticStuff.currentUser)
                         c+=1
                     }
@@ -144,6 +147,11 @@ class ViewControllerHomeScreen: UIViewController {
                     print("unable to encode class while loop")
                 }
             }
+        }
+        var what = 0
+        while(what < StaticStuff.allUsers.count){
+            print(StaticStuff.allUsers[what].username)
+            what+=1
         }
     }
    

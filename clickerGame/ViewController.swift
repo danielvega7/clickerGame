@@ -38,8 +38,8 @@ class ViewController: UIViewController {
 //        db.collection("names").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        viewWillAppear(true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
     }
 
@@ -61,29 +61,6 @@ class ViewController: UIViewController {
          if second > 30 {
              
              StaticStuff.currentUser.highscores.append(current)
-//             if StaticStuff.highScores.count < 9 {
-//                 StaticStuff.highScores.append(current)
-//                 StaticStuff.highScores.sort()
-//                 write()
-//             }
-//             else {
-//                 var i = 0
-//                 while(i < StaticStuff.highScores.count) {
-//                     print("is loop happening")
-//                         if current > StaticStuff.highScores[i] {
-//                             StaticStuff.highScores.remove(at: i)
-//                             StaticStuff.highScores.append(current)
-//                             StaticStuff.highScores.sort()
-//
-//                             write()
-//                         }
-//                         else{
-//
-//                         }
-//
-//                     i += 1
-//                 }
-//             }
              
              current = 0
              
