@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        print("view did appear current user \(StaticStuff.currentUser.username)")
         nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
     }
 
@@ -62,6 +63,7 @@ class ViewController: UIViewController {
              
              StaticStuff.currentUser.highscores.append(current)
              
+             writeUserArray()
              current = 0
              
              stopTimerTest()
@@ -111,6 +113,28 @@ class ViewController: UIViewController {
     func write() {
        
         db.collection("clicker").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
+
+    }
+    func writeUserArray() {
+        do {
+            let encoder = JSONEncoder()
+            
+            StaticStuff.allUsersData = [Data]()
+            var c = 0
+            while(c < StaticStuff.allUsers.count){
+                let data = try encoder.encode(StaticStuff.allUsers[c])
+                StaticStuff.allUsersData.append(data)
+                c+=1
+            }
+
+            
+           
+            
+        }
+        catch {
+           print("rip took an L")
+        }
+        db.collection("clicker").document("users").setData(["userArray": StaticStuff.allUsersData], merge: true)
 
     }
     

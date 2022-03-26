@@ -12,7 +12,8 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
     
     var ref = Database.database().reference()
     var infoListener: ListenerRegistration!
-
+    var temp = [User]()
+    var stored = [User]()
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
@@ -38,10 +39,42 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
+        temp = StaticStuff.allUsers
+       
+        
+        
+       
+        while(temp.count > 0){
+            var current = temp[0]
+            var index = 0
+            var sort = 0
+            var high = temp[0].top
+            
+            while(sort < temp.count) {
+                if temp[sort].top > high {
+                high = temp[sort].top
+                current = temp[sort]
+                    index = sort
+            }
+                else {
+            
+                }
+                sort += 1
+            }
+            stored.append(current)
+            temp.remove(at: index)
+            
+        }
+        
+        var quick = 0
+        while(quick < stored.count){
+            print("whats stored" + stored[quick].username)
+            quick+=1
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        machoRead()
+        //machoRead()
         tableViewOutlet.reloadData()
     }
     
@@ -113,6 +146,7 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
                     do {
                         let decoder = JSONDecoder()
                         var c = 0
+                        StaticStuff.allUsers = [User]()
                         while(c < data.count) {
                             StaticStuff.currentUser = try decoder.decode(User.self, from: data[c])
                             print("testing \(StaticStuff.currentUser.username)")

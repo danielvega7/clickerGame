@@ -26,7 +26,7 @@ class ViewControllerHomeScreen: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-        machoRead()
+        //machoRead()
         
         
         var isName = false
@@ -42,6 +42,7 @@ class ViewControllerHomeScreen: UIViewController {
             }
             if isName {
                 StaticStuff.currentUser = StaticStuff.allUsers[index]
+                print("current user is \(StaticStuff.currentUser.username)")
                 presentController()
                 
             }
