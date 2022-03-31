@@ -14,15 +14,18 @@ class ViewControllerHomeScreen: UIViewController {
     var ref = Database.database().reference()
     
     @IBOutlet weak var usernameTextFieldOutlet: UITextField!
-    @IBOutlet weak var passwordTextFieldOultet: UITextField!
+   
+    @IBOutlet weak var loginButtonOutlet: UIButton!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         machoRead()
-       
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "middleBackground")!)
+        loginButtonOutlet.backgroundColor = UIColor(red: 0.1255, green: 0.4, blue: 0.9333, alpha: 1)
+        loginButtonOutlet.layer.cornerRadius = 25
     }
     
     @IBAction func loginAction(_ sender: UIButton) {

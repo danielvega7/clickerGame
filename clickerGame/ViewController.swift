@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     var second = 0
 
     
+    @IBOutlet weak var clickerButtonOutlet: UIButton!
     @IBOutlet weak var timeLabelOutlet: UILabel!
     
     override func viewDidLoad() {
@@ -35,19 +36,19 @@ class ViewController: UIViewController {
 //        write()
         timer = Timer()
         nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
-//        db.collection("names").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
+//       self.view.backgroundColor = UIColor(patternImage: UIImage(named: "middleBackground")!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         print("view did appear current user \(StaticStuff.currentUser.username)")
-        nameLoggedInLabelOutlet.text = StaticStuff.currentUser.username
+        nameLoggedInLabelOutlet.text = "User: \(StaticStuff.currentUser.username)"
     }
 
     @objc func calculateSeconds() {
          second += 1
         timerEvent()
-        timeLabelOutlet.text = String(second)
+        timeLabelOutlet.text = "0:\(String(second))"
         write()
     }
     

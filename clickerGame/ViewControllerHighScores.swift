@@ -18,9 +18,16 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //delegates and data source
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        
+        // making background and table view transparent
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "coolGradient3")!)
+        tableViewOutlet.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
+        tableViewOutlet.clipsToBounds = true
+        tableViewOutlet.layer.cornerRadius = 25
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +100,17 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
         
        
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        StaticStuff.allUsers[indexPath.row].dateConfigure()
+        writeUserArray()
+        let alertController = UIAlertController(title: "Date of \(StaticStuff.allUsers[indexPath.row].username)'s High Score", message: StaticStuff.allUsers[indexPath.row].dateString, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Awesome", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true)
+    }
+   
+        
+    
     func read() {
         let docRef = db.collection("clicker").document("highscores")
         
@@ -112,6 +130,11 @@ class ViewControllerHighScores: UIViewController, UITableViewDelegate, UITableVi
     func write() {
        
         db.collection("clicker").document("highscores").setData(["highscores": StaticStuff.highScores], merge: true)
+
+    }
+    func writeUserArray() {
+       
+        db.collection("clicker").document("users").setData(["userArray": StaticStuff.allUsersData], merge: true)
 
     }
     func machoRead()

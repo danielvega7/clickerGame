@@ -19,41 +19,42 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjn-SR-hfA">
                                 <rect key="frame" x="16" y="44" width="136" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-KQ-hgF">
-                                <rect key="frame" x="107" y="391" width="177" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Click me"/>
-                                <connections>
-                                    <action selector="clickMeButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNd-Wz-VaL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62k-Jg-s1d">
-                                <rect key="frame" x="265" y="44" width="109" height="74"/>
+                                <rect key="frame" x="247" y="54" width="127" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Red-Start-Button-PNG-Picture"/>
                                 <connections>
                                     <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9q-mg-iHu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDv-ih-0Ai">
-                                <rect key="frame" x="120" y="218" width="151" height="21"/>
+                                <rect key="frame" x="16" y="115" width="223" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-KQ-hgF">
+                                <rect key="frame" x="107" y="329" width="176" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="clicker-icon-6"/>
+                                <connections>
+                                    <action selector="clickMeButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNd-Wz-VaL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.7406091091" green="0.91086276730000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="gamecontroller" catalog="system" id="G0X-84-zI1"/>
                     <connections>
+                        <outlet property="clickerButtonOutlet" destination="Opd-KQ-hgF" id="Tz7-vi-fJG"/>
                         <outlet property="nameLoggedInLabelOutlet" destination="RDv-ih-0Ai" id="FzD-Ms-lsP"/>
                         <outlet property="timeLabelOutlet" destination="Zjn-SR-hfA" id="wfj-5p-k32"/>
                     </connections>
@@ -71,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="585-1I-GcX">
-                                <rect key="frame" x="16" y="134" width="358" height="193"/>
+                                <rect key="frame" x="16" y="134" width="358" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="G3C-ke-lU4" detailTextLabel="IkZ-Bo-frl" style="IBUITableViewCellStyleValue1" id="BOq-Bd-GkY">
@@ -104,10 +105,10 @@
                         <viewLayoutGuide key="safeArea" id="H5Z-QW-wff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="585-1I-GcX" firstAttribute="top" secondItem="H5Z-QW-wff" secondAttribute="top" constant="90" id="Gjs-aO-cKD"/>
-                            <constraint firstItem="585-1I-GcX" firstAttribute="leading" secondItem="H5Z-QW-wff" secondAttribute="leading" constant="16" id="VRv-bl-RMU"/>
-                            <constraint firstItem="H5Z-QW-wff" firstAttribute="bottom" secondItem="585-1I-GcX" secondAttribute="bottom" constant="434" id="hMJ-oF-EFQ"/>
-                            <constraint firstItem="H5Z-QW-wff" firstAttribute="trailing" secondItem="585-1I-GcX" secondAttribute="trailing" constant="16" id="qBR-yv-E9P"/>
+                            <constraint firstItem="H5Z-QW-wff" firstAttribute="trailing" secondItem="585-1I-GcX" secondAttribute="trailing" constant="16" id="Aqg-cN-Vo7"/>
+                            <constraint firstItem="585-1I-GcX" firstAttribute="top" secondItem="H5Z-QW-wff" secondAttribute="top" constant="90" id="MB6-gP-azx"/>
+                            <constraint firstItem="H5Z-QW-wff" firstAttribute="bottom" secondItem="585-1I-GcX" secondAttribute="bottom" id="bm1-vZ-4SQ"/>
+                            <constraint firstItem="585-1I-GcX" firstAttribute="leading" secondItem="H5Z-QW-wff" secondAttribute="leading" constant="16" id="sBs-Rl-9wS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scores" image="chart.bar" catalog="system" id="x2i-el-xYv"/>
@@ -155,37 +156,36 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-k6-kzT">
-                                <rect key="frame" x="166" y="101" width="60" height="31"/>
+                                <rect key="frame" x="103" y="110" width="184" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.7406091091" green="0.91086276730000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="loginAction:" destination="m0X-eA-Z0t" eventType="touchUpInside" id="oSY-jS-JkA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WRw-QF-evK">
-                                <rect key="frame" x="99" y="623" width="192" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Sd-zM-NT4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DqR-TV-tyA"/>
                     <connections>
-                        <outlet property="passwordTextFieldOultet" destination="WRw-QF-evK" id="IOr-vh-DGR"/>
+                        <outlet property="loginButtonOutlet" destination="1VV-k6-kzT" id="eLk-KT-tIg"/>
                         <outlet property="usernameTextFieldOutlet" destination="zaX-26-8i8" id="ghi-qo-ORP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhe-5o-Dgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-742" y="619"/>
+            <point key="canvasLocation" x="-743.07692307692309" y="618.48341232227483"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Red-Start-Button-PNG-Picture" width="72" height="72"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="clicker-icon-6" width="216" height="216"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
